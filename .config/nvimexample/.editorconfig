@@ -1,0 +1,4 @@
+-- Describes how files should be formatted by lsp
+[*.lua]
+indent_style = space
+indent_size = 2
