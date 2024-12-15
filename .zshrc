@@ -134,3 +134,4 @@ alias bat="batcat"
 alias adventnvim="NVIM_APPNAME=nvimexample nvim"
 
 
+alias dotfiles="lazygit  --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
