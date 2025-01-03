@@ -3,9 +3,12 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       {
+        --Auto complete plugin
+        { 'saghen/blink.cmp' },
         -- Automatically install LSPs and related tools to stdpath for Neovim
         { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
         'williamboman/mason-lspconfig.nvim',
+
         'WhoIsSethDaniel/mason-tool-installer.nvim',
 
         "folke/lazydev.nvim",
@@ -67,6 +70,9 @@ return {
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
+
+            -- Tell lsp server about autocomplete feature
+            server.capabilities = require('blink.cmp').get_lsp_capabilities()
 
             --server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
