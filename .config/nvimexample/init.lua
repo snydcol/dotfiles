@@ -1,5 +1,3 @@
-print("advent")
-
 require("config.lazy")
 
 --Remember :help [Command] will bring up help page
@@ -34,3 +32,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+
+-- NOTE: Close fold with zc
+-- open fold with zo
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- Dont fold all all when opening file
+vim.opt.foldenable = false
