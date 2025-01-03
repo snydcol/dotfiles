@@ -27,7 +27,9 @@ return {
 
       local servers = {
 
-        --        csharp_ls = {},
+        gopls = {},
+        -- pylsp = {},
+        -- csharp_ls = {},
         omnisharp = {
           cmd = { "dotnet",
             "/home/colbysnyd/.local/share/nvimexample/mason/packages/omnisharp/libexec/OmniSharp.dll" },
@@ -42,7 +44,8 @@ return {
           },
         },
       }
-
+      -- MAson installing pylsp was not working setup manually
+      require 'lspconfig'.pylsp.setup {}
       -- Old require prior to using servers var and func to setuop
       -- require("lspconfig").lua_ls.setup(servers['lua_ls'] or {})
 
@@ -79,10 +82,8 @@ return {
           end,
         },
       }
-
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
-          print "attaching"
           local client = vim.lsp.get_client_by_id(args.data.client_id)
           if not client then return end
 

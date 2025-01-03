@@ -14,6 +14,8 @@ export ZSH="$HOME/.oh-my-zsh"
 #Path to nvim
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
+export PATH="$HOME/Downloads/zig-0.13/:$PATH"
+
 #Path to go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
@@ -135,3 +137,4 @@ alias adventnvim="NVIM_APPNAME=nvimexample nvim"
 
 
 alias dotfiles="lazygit  --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
