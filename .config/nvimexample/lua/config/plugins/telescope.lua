@@ -38,9 +38,9 @@ return {
       vim.keymap.set("n", "<space>fp", function()
         require('telescope.builtin').find_files {
           cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
-
         }
       end)
+
       require 'config.telescope.multigrep'.setup()
     end
   }
