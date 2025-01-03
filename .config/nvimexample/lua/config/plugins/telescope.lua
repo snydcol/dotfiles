@@ -17,22 +17,30 @@ return {
         }
       }
 
+
+      --HELP
+      --Using <space>f as default start
+      --
       --require('telescope.builtin').symbols { sources = { 'nerd' } }
       require('telescope').load_extension('fzf')
+
+      -- Find in directory
       vim.keymap.set("n", "<space>fd", require('telescope.builtin').find_files)
-      vim.keymap.set("n", "<space>ec", function()
+
+      -- Use telescope to  look for nvim config files
+      vim.keymap.set("n", "<space>fc", function()
         require('telescope.builtin').find_files {
           cwd = vim.fn.stdpath("config")
 
         }
       end)
-      vim.keymap.set("n", "<space>ep", function()
+      -- Use telescope to serch for files used for nvim plugins
+      vim.keymap.set("n", "<space>fp", function()
         require('telescope.builtin').find_files {
           cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
 
         }
       end)
-      -- TODO Fix broken
       require 'config.telescope.multigrep'.setup()
     end
   }

@@ -26,7 +26,8 @@ return {
 
         --        csharp_ls = {},
         omnisharp = {
-          cmd = { "dotnet ", "~/.local/share/nvimexample/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+          cmd = { "dotnet",
+            "/home/colbysnyd/.local/share/nvimexample/mason/packages/omnisharp/libexec/OmniSharp.dll" },
         },
         lua_ls = {
           settings = {

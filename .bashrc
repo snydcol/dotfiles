@@ -136,5 +136,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 #Source RUST
 . $HOME/.cargo/env
 
+alias adventnvim="NVIM_APPNAME=nvimexample nvim"
 #Complete for aliases -- must be AFTER ALL aliases are defined
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
